@@ -5,10 +5,21 @@ import './index.css'
 const root = document.getElementById('root');
 
 class Square extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            value:null,
+        };
+    }
+
+    clicking() {
+        this.setState({value:'X'})    
+    }
+
     render() {
         return (
-            <button className="square">
-                {this.props.value}
+            <button className="square" onClick={()=> this.setState({value: 'X'})}>
+                {this.state.value}
             </button>
         )
     }
